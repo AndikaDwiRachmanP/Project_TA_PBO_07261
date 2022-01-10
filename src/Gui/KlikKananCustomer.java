@@ -29,7 +29,7 @@ public class KlikKananCustomer extends JDialog{
     public KlikKananCustomer(JFrame parent, CustomerEntity customer) {
         super(parent);
         setTitle("Edit Data");
-        setSize(350, 600);
+        setSize(350, 400);
         setLocationRelativeTo(null);
         getContentPane().setBackground(Color.white);
         setLayout(null);
@@ -68,15 +68,15 @@ public class KlikKananCustomer extends JDialog{
 
         jLabel4.setText("Password");
         add(jLabel4);
-        jLabel4.setBounds(12, 279, 80, 16);
+        jLabel4.setBounds(12, 216, 80, 16);
 
         add(jTextField4);
-        jTextField4.setBounds(12, 302, 306, 22);
+        jTextField4.setBounds(12, 239, 306, 22);
         jTextField4.setText(customer.getPassword());
 
         jButton1.setText("Save");
         add(jButton1);
-        jButton1.setBounds(240, 342, 80, 25);
+        jButton1.setBounds(240, 279, 80, 25);
 
         jButton1.addActionListener(new ActionListener() {
             @Override

@@ -2,15 +2,10 @@ package Model;
 
 import Entity.BarangEntity;
 import Helper.Koneksi;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.ArrayList;
+
 import java.sql.*;
-import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.Date;
 
 
 public class BarangModel extends ModelAbstract {
@@ -62,8 +57,6 @@ public class BarangModel extends ModelAbstract {
         }
     }
     
-    
-    
     public int getupdate( int id,String nama, int stok, double harga, Date updated_at) {
         int row = 0;
     try {
@@ -86,21 +79,27 @@ public class BarangModel extends ModelAbstract {
     return row;
      }
     
-    public ArrayList<BarangEntity> getdelete(int id) {
-         ArrayList<BarangEntity> arraylistBarang = new ArrayList<>();
-    
+    public void Delete(int id) {
      try {
            Statement stat = conn.createStatement();
-            // buat query hapus
             String sql = String.format("DELETE FROM barang WHERE id=%d", id);
-
-            // hapus data
             stat.execute(sql);
-            
             System.out.println("Data telah terhapus...");
         } catch (Exception e) {
             e.printStackTrace();
         }
-     return arraylistBarang;
        }
+
+    public String getNamaBarang (int index) {
+        ArrayList<BarangEntity> barang = getData();
+        String nama = "";
+
+        for(BarangEntity i: barang) {
+            if (index == i.getId()) {
+                nama = i.getNama();
+                return nama;
+            }
+        }
+        return null;
+    }
 }

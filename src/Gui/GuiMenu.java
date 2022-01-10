@@ -57,6 +57,9 @@ public class GuiMenu extends Komponen {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
             }
         });
+        jButton4.addActionListener(e -> {
+            new GuiTransaksiAdmin().setVisible(true);
+        });
         jButton1.setFont(new java.awt.Font("Segoe UI", 0, 11));
         jButton2.setFont(new java.awt.Font("Segoe UI", 0, 11));
         jButton3.setFont(new java.awt.Font("Segoe UI", 0, 11));

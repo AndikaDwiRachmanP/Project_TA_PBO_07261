@@ -28,9 +28,6 @@ public class GuiAdmin extends Komponen {
         getContentPane().setLayout(null);
 
 
-
-
-
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
                 new Object [][] {
                         {null, null, null},

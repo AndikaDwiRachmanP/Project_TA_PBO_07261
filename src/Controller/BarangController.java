@@ -15,7 +15,6 @@ public class BarangController implements ControllerInterface {
     }
     public int UpdateBarang(int Id, String Nama, int Stok, Double Harga, Date updated_at){
         return AllObjectModel.barangModel.getupdate(Id, Nama, Stok, Harga, updated_at);
-        
     }
 
     public static DefaultTableModel syncTable() {
@@ -31,8 +30,22 @@ public class BarangController implements ControllerInterface {
             data[3] = i.getHarga();
             data[4] = i.getCreated_at();
             data[5] = i.getUpdated_at();
+            barangDataset.addRow(data);
+        }
+        return barangDataset;
+    }
 
-
+    public static DefaultTableModel syncTableCust() {
+        DefaultTableModel barangDataset = new DefaultTableModel();
+        Object[] column = {"id","nama","stok","harga"};
+        barangDataset.setColumnIdentifiers(column);
+        ArrayList<BarangEntity> barang = AllObjectModel.barangModel.getData();
+        for(BarangEntity i : barang) {
+            Object[] data = new Object[4];
+            data[0] = i.getId();
+            data[1] = i.getNama();
+            data[2] = i.getStok();
+            data[3] = i.getHarga();
             barangDataset.addRow(data);
         }
         return barangDataset;
@@ -42,8 +55,7 @@ public class BarangController implements ControllerInterface {
         AllObjectModel.barangModel.getInsert(new BarangEntity(0,created_at,updated_at,nama,stok, harga));
     }
    public void HapusBarang(int IdHapus){
-       AllObjectModel.barangModel.getdelete(IdHapus);
-    
+       AllObjectModel.barangModel.Delete(IdHapus);
     }
    
     

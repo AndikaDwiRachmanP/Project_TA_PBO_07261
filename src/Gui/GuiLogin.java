@@ -60,14 +60,13 @@ public class GuiLogin extends Komponen {
                             cek = AllObjectController.customerController.checkCustomer(nama, password);
                             if (cek > 0) {
                                 dispose();
-                                new GuiTransaksi().setVisible(true);
+                                new GuiTransaksi(cek).setVisible(true);
                             } else {
                                 JOptionPane.showMessageDialog(null, "GAGAL LOGIN");
                             }
                         } catch (Exception ex) {
                             JOptionPane.showMessageDialog(null, "Cancelled");
                         }
-
                     }
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null, "Cancelled");
@@ -77,6 +76,14 @@ public class GuiLogin extends Komponen {
         });
         getContentPane().add(jButton2);
         jButton2.setBounds(173, 209, 74, 25);
+
+        jButton3.setText("Kembali");
+        getContentPane().add(jButton3);
+        jButton3.setBounds(90, 209, 74, 25);
+        jButton3.addActionListener(e -> {
+            new GuiLoginCustomer().setVisible(true);
+            dispose();
+        });
 
         jLabel4.setForeground(new java.awt.Color(0, 0, 255));
         jLabel4.setText("Register?");
@@ -140,7 +147,7 @@ public class GuiLogin extends Komponen {
                             cek = AllObjectController.customerController.checkCustomer(nama, password);
                             if (cek > 0) {
                                 dispose();
-                                new GuiTransaksi().setVisible(true);
+                                new GuiTransaksi(cek).setVisible(true);
                             } else {
                                 JOptionPane.showMessageDialog(null, "GAGAL LOGIN");
                             }

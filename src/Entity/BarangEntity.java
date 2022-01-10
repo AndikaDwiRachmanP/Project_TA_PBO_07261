@@ -6,8 +6,6 @@ public class BarangEntity extends EntityAbstract {
     protected String nama;
     protected int stok;
     protected Double harga;
-    
-    public BarangEntity(){}
 
     public BarangEntity(int id, Date created_at, Date updated_at, String nama, int stok, Double harga) {
         super(id, created_at, updated_at);
@@ -15,7 +13,6 @@ public class BarangEntity extends EntityAbstract {
         this.stok = stok;
         this.harga = harga;
     }
-
 
     public String getNama() {
         return nama;

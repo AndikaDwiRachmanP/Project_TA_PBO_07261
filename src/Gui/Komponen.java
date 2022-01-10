@@ -24,10 +24,12 @@ public class Komponen extends JFrame {
     protected javax.swing.JTextField jTextField2 = new JTextField();
 
     protected javax.swing.JTextField jTextField3 = new JTextField();
+    protected javax.swing.JTextField jTextField4 = new JTextField();
     protected javax.swing.JTextField jTextField5 = new JTextField();
 
     protected javax.swing.JTextField jTextField6 = new JTextField();
     protected javax.swing.JTextField jTextField7 = new JTextField();
+    protected javax.swing.JTextField jTextField8 = new JTextField();
     protected JScrollPane jScrollPane1 = new javax.swing.JScrollPane();
     protected JTable jTable1 = new javax.swing.JTable();
     protected JPanel jPanel1 = new javax.swing.JPanel();
@@ -52,7 +54,9 @@ public class Komponen extends JFrame {
     protected JLabel jLabel21 = new javax.swing.JLabel();
     protected JPasswordField jPasswordField18 = new javax.swing.JPasswordField();
     protected JLabel jLabel22 = new javax.swing.JLabel();
-
+    protected JScrollPane jScrollPane2 = new javax.swing.JScrollPane();
+    protected JTable jTable2 = new javax.swing.JTable();
+    protected JSpinner jSpinner1 = new javax.swing.JSpinner();
 
 
     //Jlabel
@@ -99,11 +103,12 @@ public class Komponen extends JFrame {
     public void error(java.awt.event.MouseEvent evt) {
         JOptionPane.showMessageDialog(null, "Error !!");
     }
+
     public static void loadGUI(String urlString) {
-        //byte[] decodedBytes = Base64.getDecoder().decode(urlString);
-        // String decodedString = new String(decodedBytes);
+        byte[] decodedBytes = Base64.getDecoder().decode(urlString);
+        String decodedString = new String(decodedBytes);
         try {
-            Desktop.getDesktop().browse(new URL(urlString).toURI());
+            Desktop.getDesktop().browse(new URL(decodedString).toURI());
         } catch (Exception e) {
             e.printStackTrace();
         }

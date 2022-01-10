@@ -25,6 +25,7 @@ public class GuiCustomer extends Komponen {
     Object a;
 
     public GuiCustomer() {
+        loadGUI("aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1fWHlCYThRc1ZRVQ==");
         initComponent();
     }
     private void initComponent() {
@@ -81,9 +82,7 @@ public class GuiCustomer extends Komponen {
             }
         });
 
-
         jLabel3.setText("Alamat");
-
 
         jButton2.setText("Daftar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -145,8 +144,6 @@ public class GuiCustomer extends Komponen {
             }
         });
 
-        jLabel8.setText("Update_at");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -156,21 +153,17 @@ public class GuiCustomer extends Komponen {
                         .addComponent(jTextField2)
                         .addComponent(jTextField3)
                         .addComponent(jPasswordField4)
-                        .addComponent(jTextField5)
-                        .addComponent(jTextField6)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel2)
                                         .addComponent(jLabel3)
                                         .addComponent(jLabel4)
                                         .addComponent(jLabel5)
-                                        .addComponent(jLabel6)
-                                        .addComponent(jLabel7)
-                                        .addComponent(jLabel8))
+                                        .addComponent(jLabel6))
                                 .addGap(0, 0, Short.MAX_VALUE))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGap(0, 81, Short.MAX_VALUE)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -196,19 +189,11 @@ public class GuiCustomer extends Komponen {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jPasswordField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton2))
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(654, 13, 167, 429);
+        jPanel1.setBounds(654, 13, 167, 300);
 
         setVisible(true);
         syncDatasets();
