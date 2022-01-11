@@ -37,7 +37,7 @@ public class GuiBarang extends Komponen {
     private void initComponent() {
 
         setTitle("Login"); // #TODO: Dekorasi
-        setSize(720, 580);  // #TODO: Rubah Ukuran Frame
+        setSize(780, 390);  // #TODO: Rubah Ukuran Frame
         setLocationRelativeTo(null);
         getContentPane().setBackground(Color.white);
         setLayout(null);
@@ -125,14 +125,14 @@ public class GuiBarang extends Komponen {
             }
         });
 
-        jLabel21.setText("Created_at");
+
 
         jTextField8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
             }
         });
 
-        jLabel22.setText("Update_at");
+
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -141,8 +141,8 @@ public class GuiBarang extends Komponen {
                         .addComponent(jTextField3)
                         .addComponent(jTextField4)
                         .addComponent(jTextField5)
-                        .addComponent(jTextField7)
-                        .addComponent(jTextField8)
+                        //.addComponent(jTextField7)
+                        //.addComponent(jTextField8)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                                 .addGap(0, 81, Short.MAX_VALUE)
                                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -173,18 +173,18 @@ public class GuiBarang extends Komponen {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel21)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                             //   .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel22)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                              //  .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton4)
                                 .addGap(52, 52, 52))
         );
 
         getContentPane().add(jPanel3);
-        jPanel3.setBounds(588, 13, 167, 330);
+        jPanel3.setBounds(588, 13, 167, 250);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
                 new Object [][] {
@@ -261,147 +261,7 @@ public class GuiBarang extends Komponen {
 
 
 
-    public void initComponenta(){
-        setSize(1000 , 500);
-        setLayout(null);
-        setLocationRelativeTo(null);
 
-        labelId.setBounds(20 , 0 , 70 , 30);
-        labelId.setFont(new Font("Arial" , Font.BOLD,14));
-        txtId.setBounds(90 , 4, 150 , 20);
-        add(labelId);
-        add(txtId);
-        
-        labelNama.setBounds(20 , 30 , 70 , 30);
-        labelNama.setFont(new Font("Arial" , Font.BOLD,14));
-        txtNama.setBounds(90 , 34, 150 , 20);
-        add(labelNama);
-        add(txtNama);
 
-        labelStok.setBounds(20 , 60 , 70 , 30);
-        labelStok.setFont(new Font("Arial" , Font.BOLD,14));
-        txtStok.setBounds(90 , 64, 150 , 20);
-        add(labelStok);
-        add(txtStok);
 
-        labelHarga.setBounds(20 , 90 , 70 , 30);
-        labelHarga.setFont(new Font("Arial" , Font.BOLD,14));
-        txtHarga.setBounds(90 , 94, 150 , 20);
-        add(labelHarga);
-        add(txtHarga);
-
-        sp_Mhs.setViewportView(tbl_Mhs);
-        modelBar = (DefaultTableModel) tbl_Mhs.getModel();
-        tbl_Mhs.setDefaultEditor(Object.class, null);
-        modelBar.addColumn("Id");
-        modelBar.addColumn("Nama");
-        modelBar.addColumn("Stok");
-        modelBar.addColumn("Harga");
-        modelBar.addColumn("Created_at");
-        modelBar.addColumn("Updated_at");
-        sp_Mhs.setBounds(380 , 30 , 400 , 400);
-        add(sp_Mhs);
-        btnInsert.setBounds(20 , 180 , 100 , 30);
-        add(btnInsert);
-        
-        btnUpdate.setBounds(130 , 180 , 100 , 30);
-        add(btnUpdate);
-        
-        btnDelete.setBounds(240 , 180 , 100 , 30);
-        add(btnDelete);
-
-//        Cetak data dulu
-
-        cetakMhs();
-        btnInsert.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try{
-                    success((MouseEvent) a);
-                    int stok = Integer.parseInt(txtStok.getText());
-                    Double harga = Double.parseDouble(txtHarga.getText());
-                    AllObjectController.barangController.insertBarang( 0, new Date(), new Date(), txtNama.getText(),stok,harga);
-                    cetakMhs();
-                }catch (Exception ex){
-                    failed((MouseEvent) a);
-                }
-            }
-        });
-        
-        btnUpdate.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try{
-                    success((MouseEvent) a);
-                    
-                    int id = Integer.parseInt(txtId.getText());
-                    int stok = Integer.parseInt(txtStok.getText());
-                    Double harga = Double.parseDouble(txtHarga.getText());
-                    AllObjectController.barangController.UpdateBarang(id,txtNama.getText(),stok,harga,new Date());
-                    cetakMhs();
-                }catch (Exception ex){
-                    failed((MouseEvent) a);
-                }
-            }
-        });
-
-        btnDelete.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try{
-                    success((MouseEvent) a);
-                    int id = Integer.parseInt(txtId.getText());
-                    AllObjectController.barangController.HapusBarang(id);
-                    cetakMhs();
-                }catch (Exception ex){
-                    failed((MouseEvent) a);
-                }
-            }
-        });
-        tbl_Mhs.addMouseListener(new MouseAdapter()
-		{
-                    @Override
-			public void mouseClicked(MouseEvent me)
-			{
-				int pilih = tbl_Mhs.getSelectedRow();
-				if(pilih == -1)
-				{
-					return;
-				}
-				
-				int id = (int) tbl_Mhs.getValueAt(pilih, 0);
-                                String dimana = String.valueOf(id);
-				txtId.setText(dimana);
-				String nama = (String) tbl_Mhs.getValueAt(pilih, 1);
-				txtNama.setText(nama);
-				int stok = (int) tbl_Mhs.getValueAt(pilih, 2);
-                                String apa = String.valueOf(stok);
-				txtStok.setText(apa);
-				Double harga = (Double) tbl_Mhs.getValueAt(pilih, 3);
-                                String kapan = String.valueOf(harga);
-				txtHarga.setText(kapan);
-                        }
-		});
-    }
-
-    public void cetakMhs(){
-        modelBar.setRowCount(0);
-        try{
-                Object[] obj = new Object[6];
-                for (int i=0;i<AllObjectController.barangController.getData().size();i++){ 
-            obj[0] = AllObjectController.barangController.getData().get(i).getId();
-            obj[1] = AllObjectController.barangController.getData().get(i).getNama();
-            obj[2] = AllObjectController.barangController.getData().get(i).getStok();
-            obj[3] = AllObjectController.barangController.getData().get(i).getHarga();
-            obj[4] = AllObjectController.barangController.getData().get(i).getCreated_at();
-            obj[5] = dateFormat.format(AllObjectController.barangController.getData().get(i).getUpdated_at());
-            
-                
-                modelBar.addRow(obj);
-            
-        }
-        }catch (Exception e){
-            System.out.println(e);
-        }
-    }
 }

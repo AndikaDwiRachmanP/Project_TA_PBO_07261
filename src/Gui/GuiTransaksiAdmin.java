@@ -37,7 +37,7 @@ public class GuiTransaksiAdmin extends Komponen {
 
     private void initComponent() {
         setTitle("Login"); // #TODO: Dekorasi
-        setSize(940, 500);  // #TODO: Rubah Ukuran Frame
+        setSize(620, 340);  // #TODO: Rubah Ukuran Frame
         setLocationRelativeTo(null);
         getContentPane().setBackground(Color.white);
         setLayout(null);

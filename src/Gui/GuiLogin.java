@@ -79,88 +79,17 @@ public class GuiLogin extends Komponen {
 
         jButton3.setText("Kembali");
         getContentPane().add(jButton3);
-        jButton3.setBounds(90, 209, 74, 25);
+        jButton3.setBounds(90, 209, 80, 25);
         jButton3.addActionListener(e -> {
             new GuiLoginCustomer().setVisible(true);
             dispose();
         });
 
         jLabel4.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel4.setText("Register?");
+
         getContentPane().add(jLabel4);
         jLabel4.setBounds(12, 213, 100, 16);
     }
 
-    void initComponentA() { // #TODO: Ram's original
-        setTitle("Login");
 
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(320, 480);
-        setLocationRelativeTo(null);
-        getContentPane().setBackground(Color.white);
-        setLayout(null);
-        setVisible(true);
-
-        labelNama.setBounds(35, 250, 80, 25);
-        add(labelNama);
-        txtNama.setBounds(130, 250, 130, 25);
-        add(txtNama);
-
-        labelPassword.setBounds(35, 290, 80, 25);
-        add(labelPassword);
-        txtPassword.setBounds(130, 290, 130, 25);
-        add(txtPassword);
-
-        btnLogin.setBounds(110, 350, 100, 25);
-        btnLogin.setBackground(Color.black);
-        btnLogin.setForeground(Color.white);
-        btnLogin.setBorder(null);
-        add(btnLogin);
-
-        btnLogin.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                btnLogin.setForeground(Color.black);
-                btnLogin.setBackground(Color.green);
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-                btnLogin.setForeground(Color.white);
-                btnLogin.setBackground(Color.black);
-            }
-        });
-
-        btnLogin.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String nama = txtNama.getText();
-                String password = txtPassword.getText();
-                try {
-                    int cek = AllObjectController.adminController.checkAdmin(nama, password);
-                    if (cek > 0) {
-                        dispose();
-                        new GuiMenu().setVisible(true);
-
-                    } else {
-                        try {
-                            cek = AllObjectController.customerController.checkCustomer(nama, password);
-                            if (cek > 0) {
-                                dispose();
-                                new GuiTransaksi(cek).setVisible(true);
-                            } else {
-                                JOptionPane.showMessageDialog(null, "GAGAL LOGIN");
-                            }
-                        } catch (Exception ex) {
-                            JOptionPane.showMessageDialog(null, "Cancelled");
-                        }
-
-                    }
-                } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, "Cancelled");
-
-                }
-            }
-        });
-    }
 }

@@ -68,7 +68,13 @@ public class GuiMenu extends Komponen {
         getContentPane().add(jButton4);
         jButton4.setBounds(50, 230, 135, 25);
 
-
+        jButton5.setText("Logout");
+        jButton5.addActionListener(e -> {
+            new GuiLogin().setVisible(true);
+            dispose();
+        });
+        getContentPane().add(jButton5);
+        jButton5.setBounds(51, 269, 135, 25);
         setVisible(true);
 
 

@@ -46,6 +46,7 @@ public class Komponen extends JFrame {
     protected JLabel jLabel17 = new javax.swing.JLabel();
     protected JPasswordField jPasswordField13 = new javax.swing.JPasswordField();
     protected JButton jButton4 = new javax.swing.JButton();
+    protected JButton jButton5 = new javax.swing.JButton();
     protected JPasswordField jPasswordField14 = new javax.swing.JPasswordField();
     protected JLabel jLabel18 = new javax.swing.JLabel();
     protected  JLabel jLabel19 = new javax.swing.JLabel();
